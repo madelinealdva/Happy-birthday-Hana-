@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hana 🎀</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:'Quicksand',sans-serif;
+  background:linear-gradient(135deg,#fff5fa,#f7efff,#fffaf0);
+  color:#70566a;
+}
+.page{
+  position:absolute; inset:0; padding:28px 22px;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none; transform:translateX(35px);
+  transition:.65s ease;
+}
+.page.active{opacity:1; pointer-events:auto; transform:translateX(0)}
+.card{
+  width:min(92vw,430px); max-height:88vh; overflow:auto;
+  padding:34px 25px 30px; text-align:center;
+  background:rgba(255,255,255,.72);
+  border:1.5px solid #f3cfe2;
+  border-radius:32px;
+  box-shadow:0 15px 45px rgba(189,139,173,.18);
+  position:relative;
+}
+.card:before,.card:after{
+  content:""; position:absolute; width:85px;height:85px;
+  border:1px solid #e8b9d3; border-radius:50%;
+  opacity:.45;
+}
+.card:before{top:-25px;left:-25px}.card:after{bottom:-30px;right:-25px}
+h1,h2{
+  font-family:'Cormorant Garamond',serif;
+  color:#9b6687; margin:8px 0 14px;
+}
+h1{font-size:50px;line-height:.95}
+h2{font-size:38px}
+p{font-size:15px;line-height:1.8;margin:10px 2px}
+.small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#b383a3}
+.flower{font-size:42px; margin-bottom:4px}
+.decor{font-size:23px;letter-spacing:8px;margin:16px 0}
+button{
+  border:0; cursor:pointer; margin:18px 5px 0;
+  padding:11px 21px; border-radius:30px;
+  background:#edc3d9;color:#754f68;
+  font-family:inherit;font-weight:600;
+  box-shadow:0 5px 14px rgba(190,133,164,.18);
+}
+button:hover{transform:translateY(-2px)}
+.wish{
+  background:#fff4fa;border-radius:20px;padding:15px 17px;
+  margin:13px 0;border:1px dashed #e6b8d2;
+}
+.signature{font-family:'Cormorant Garamond',serif;font-size:24px;color:#9b6687;margin-top:18px}
+.petal{
+  position:fixed; top:-30px; font-size:16px; opacity:.65;
+  animation:fall linear infinite; pointer-events:none;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+.dots{position:fixed;bottom:15px;left:0;right:0;text-align:center}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e7bfd5;margin:0 4px}
+.dot.active{background:#9d6d8d;width:20px;border-radius:8px}
+@media(max-height:650px){.card{max-height:84vh;padding:24px 20px}h1{font-size:42px}}
+</style>
+</head>
+<body>
+
+<div class="petal" style="left:8%;animation-duration:9s">🌸</div>
+<div class="petal" style="left:27%;animation-duration:12s;animation-delay:2s">♡</div>
+<div class="petal" style="left:48%;animation-duration:10s;animation-delay:1s">🌷</div>
+<div class="petal" style="left:72%;animation-duration:13s;animation-delay:3s">✿</div>
+<div class="petal" style="left:90%;animation-duration:11s;animation-delay:4s">♡</div>
+
+<section class="page active">
+  <div class="card">
+    <div class="flower">🌷🎀🌷</div>
+    <div class="small">a little birthday letter for</div>
+    <h1>HAPPY<br>BIRTHDAY<br>HANA!</h1>
+    <div class="decor">♡ ✿ ♡</div>
+    <p>Untuk teman sebangku yang selalu ada di sebelahku, hari ini giliran kamu yang jadi main character. 🩷</p>
+    <button onclick="nextPage()">open your letter ♡</button>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower">💐</div>
+    <div class="small">dear hana</div>
+    <h2>For My Seatmate ♡</h2>
+    <p>
+      Happy birthday, Hana! 🎀<br>
+      Semoga di umur kamu yang baru ini, hari-hari kamu dipenuhi
+      hal-hal kecil yang bikin kamu senyum. Semoga semua yang kamu
+      usahakan pelan-pelan menemukan jalannya sendiri.
+    </p>
+    <p>
+      Makasih ya udah jadi teman sebangkuku. Dari ngobrol random,
+      ketawa karena hal nggak jelas, sampai momen-momen kecil di kelas
+      yang mungkin kelihatannya biasa aja, tapi ternyata jadi kenangan
+      yang bakal aku inget. 🌸
+    </p>
+    <div class="wish">
+      🌷 semoga selalu dikelilingi orang-orang baik<br>
+      🎀 semoga semua impianmu satu-satu tercapai<br>
+      🦢 semoga kamu selalu punya alasan untuk bahagia
+    </div>
+    <button onclick="prevPage()">← back</button>
+    <button onclick="nextPage()">next ♡</button>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower">🦢🌸🎀🌸🦢</div>
+    <div class="small">one last thing...</div>
+    <h2>Keep Shining, Hana ♡</h2>
+    <p>
+      Jangan lupa kalau kamu berharga, bukan cuma di hari ulang tahunmu,
+      tapi di setiap hari. Tetap jadi Hana yang kamu mau, tetap punya
+      mimpi-mimpi besar, dan jangan takut tumbuh menjadi versi dirimu
+      yang baru.
+    </p>
+    <p>
+      Semoga tahun ini lebih lembut sama kamu, lebih banyak tawa,
+      lebih sedikit air mata, dan tentunya lebih banyak cerita seru
+      yang bisa kita ceritain lagi nanti. 💗
+    </p>
+    <div class="decor">🌷 ♡ ✿ ♡ 🌷</div>
+    <div class="signature">with love,<br>your seatmate 🎀</div>
+    <button onclick="prevPage()">← back</button>
+    <button onclick="location.reload()">again ♡</button>
+  </div>
+</section>
+
+<div class="dots">
+  <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+</div>
+
+<script>
+let current=0;
+const pages=document.querySelectorAll('.page');
+const dots=document.querySelectorAll('.dot');
+
+function showPage(n){
+  current=(n+pages.length)%pages.length;
+  pages.forEach((p,i)=>p.classList.toggle('active',i===current));
+  dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+}
+function nextPage(){showPage(current+1)}
+function prevPage(){showPage(current-1)}
+</script>
+</body>
+</html>
